@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color Generator</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    header{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column; 
+    }
+    div h1{
+        padding: 1rem;
+        background-color: black;
+        color: white;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    div button{
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        border: 4px solid black;
+        border-radius: 1rem;
+        background-color: red;
+        color: white;
+    }
+    @media screen and (min-width:400px){
+        div h1{
+            font-size: 1.2rem;
+        }
+    }
+</style>
+<body>
+    <header>
+    <div>
+        <h1>Background Color : Red</h1>
+        <button>Click Me To Chose Random Color</button>
+    </div>
+    </header>
+    <script>
+        let he=document.querySelector("header");
+        let bu=document.querySelector("button");
+        let head=document.querySelector("h1");
+        let inp=document.querySelector("input");
+        bu.addEventListener("click",()=>{
+        let r=Math.floor(Math.random()*225);
+        let g=Math.floor(Math.random()*225);
+        let b=Math.floor(Math.random()*225);
+        console.log(r,g,b);
+        he.style.backgroundColor=`rgb(${r},${g},${b})`;
+        head.innerText=`Background Color : rgb(${r},${g},${b})`;
+        });
+    </script>
+</body>
+</html>
